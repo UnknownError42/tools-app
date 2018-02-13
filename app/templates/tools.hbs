@@ -1,0 +1,34 @@
+<h2>Outils</h2>
+{{#action-button action="newTool" bsClass="success"}}{{fa-icon "plus-circle"}} Nouvel outil...{{/action-button}}
+<br>
+{{outlet}}
+<br>
+<ul class="list-group">
+  {{#each model as |tool|}}
+    <li class="list-group-item list-group-item-action">
+      <div class="row">
+        <div class="col">
+        {{tool.name}}
+        </div>
+        <div class="col">
+          <span data-toggle="popover" title="Catégories">
+            {{pluralize tool.categories.length "" "catégorie" "catégories"}}
+          </span>
+          <ul class="hide popper-content">
+            {{#each tool.categories as |cat|}}<li>{{cat.name}}</li>{{/each}}
+          </ul>
+        </div>
+        <div class="col">
+          <div class="float-right">
+            {{#link-to "tools.update" tool.id class="btn btn-light btn-sm"}}{{fa-icon "edit"}}{{/link-to}}
+            <a href="#" class="btn btn-light btn-sm" {{action "toDelete" tool}}>{{fa-icon "remove"}}</a>
+          </div>
+        </div>
+      </div>
+          {{#alert-confirmation bsClass="danger" param=tool action="supprimer" visible=tool.toDelete}}
+            Voulez-vous supprimer l'outil `<b>{{tool.name}}</b>` ?
+          {{/alert-confirmation}}
+    </li>
+  {{/each}}
+</ul>
+

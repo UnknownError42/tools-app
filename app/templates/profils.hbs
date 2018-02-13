@@ -1,0 +1,21 @@
+<h2>Profils</h2>
+<button {{action "addNew"}} class="btn btn-success">
+  Ajouter nouveau (en dur)
+</button>
+{{#link-to "profils.new"  class="btn btn-success"}}
+  {{fa-icon "plus"}}
+  Nouveau profil
+{{/link-to}}
+<br>
+{{outlet}}
+<br>
+<div class="list-group">
+{{#each model as |profil|}}
+  <div class="list-group-item">
+  {{#link-to "profil" profil}}
+    {{profil.name}}
+  {{/link-to}}
+  <button class="btn btn-danger btn-sm float-right" {{action "delete" profil}}>{{fa-icon "remove"}}</button>
+  </div>
+{{/each}}
+</div>

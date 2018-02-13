@@ -1,0 +1,5 @@
+<select style="height:100px" class="form-control" multiple onChange={{action "selectElement"}} rows="10">
+  {{#each elements as |elm|}}
+    <option value={{elm.id}} selected={{include selectedIds elm.id}}>{{elm.name}}</option>
+  {{/each}}
+</select>

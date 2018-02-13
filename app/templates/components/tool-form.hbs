@@ -1,0 +1,23 @@
+<div class="segment">
+  <div class="container">
+    <h2>{{title}}</h2>
+      {{#alert-confirmation bsClass="warning" param=tool action="doButtonThing" cancel='back' visible=dirty}}
+        Enregistrer les modifications réalisées sur `<b>{{tool.name}}</b> ?`
+      {{/alert-confirmation}}
+    <form>
+      <div class="form-group">
+        <label for="name">Nom :</label>
+        {{input type="text" id="name" class="form-control" placeholder="Nom de l'outil" value=tool.name}}
+      </div>
+      <div class="form-group">
+        <label for="description">Description :</label>
+        {{textarea id="description" class="form-control" placeholder="Description" value=tool.description}}
+      </div>
+      <div class="form-group">
+        {{my-select elements=categories selectedIds=idCategories}}
+      </div>
+      <button {{action "doButtonThing" tool}} class="btn btn-primary">✓ Enregistrer</button>
+      <button {{action "back" tool}} class="btn btn-default">Annuler</button>
+    </form>
+  </div>
+</div>

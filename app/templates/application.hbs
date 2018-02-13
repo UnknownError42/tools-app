@@ -1,5 +1,17 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
-
+<div class="container">
+  <ul class="nav nav-pills">
+    <li class="nav-item active">
+      {{#link-to "index" class="nav-link"}}Home{{/link-to}}
+    </li>
+    <li class="nav-item">
+      {{#link-to "tools" class="nav-link"}}Outils{{/link-to}}
+    </li>
+    <li class="nav-item">
+      {{#link-to "categories" class="nav-link"}}Catégories{{/link-to}}
+    </li>
+    <li class="nav-item">
+      {{#link-to "profils" class="nav-link"}}Profils{{/link-to}}
+    </li>
+  </ul>
 {{outlet}}
+</div>
