@@ -12,6 +12,11 @@ You will need the following things properly installed on your computer.
 * [Ember CLI](https://ember-cli.com/)
 * [Google Chrome](https://google.com/chrome/)
 
+You will need the following items correctly installed on your computer or on a remote server.
+* [MongoDb](https://www.mongodb.com/download-center#community)
+* [Restheart](https://github.com/SoftInstigate/restheart/releases/tag/3.2.2)
+
+
 ## Installation
 
 * `git clone <repository-url>` this repository
