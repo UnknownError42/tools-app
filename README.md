@@ -23,8 +23,15 @@ You will need the following items correctly installed on your computer or on a r
 * `cd tools-app`
 * `npm install`
 
+Create the database by running the script:
+```
+mongo 127.0.0.1:27017 database/create.js
+```
+
 ## Running / Development
 
+* `mongod`
+* `java -jar restheart.jar`
 * `ember serve`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 * Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
